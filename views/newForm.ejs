@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head')%>
+<body>
+    <!--For for posting message -->
+    <div>
+        <div class="main-heading">
+            <h3>New Message</h3>
+            <h6><a href="/feed">Back</a></h6>
+        </div>
+        <form class= "message-form" action="/feed" method="post">
+            <h5>Name:</h5>
+            <input type="text" name="name" class=" form-control">
+            <% if(err){%>
+                <p><%=err['name']%></p>
+                
+                <%}%>
+            <h5>Message</h5>
+            <textarea name="message"  cols="30" rows="10" class="text form-control"></textarea>
+            <% if(err){%>
+                <p><%=err['message']%></p>
+                
+                <%}%>
+                <button class="post-btn btn btn-secondary btn">Add message</button>
+        </form>
+    </div>
+</body>
+</html>

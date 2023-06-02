@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head')%>
+<body>
+    <div id="main-content">
+        <h1>Welcome to Facebook</h1>
+        <a href="/feed">Back</a>
+        <h2 id="full-message-name"><%=messages.name %></h2>
+        <p><%=messages.message %></p>
+        <div id="edit-delete-links">
+            <p><%=Date().slice(0,21)%></p>
+            <button ><a class="btn" href="/delete-message/<%= messages._id %>">Delete</a></button>
+            <button><a class="btn" href="/feed/edit/1/<%=messages._id%>">Edit Post</a></button>
+        </div>
+    </div>
+</body>
+</html>

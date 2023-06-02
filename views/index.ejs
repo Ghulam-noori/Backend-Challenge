@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head')%>
+<body>
+    <div id="main-content">
+        <div class="main-heading">
+            <h1>Welcome to Facebook</h1>
+            <!-- <h6><a href="new/feed">Add a post</a></h6> -->
+        </div>
+        <form class= "message-form" action="/feed" method="post">
+            <div class="post-form">
+                <label for="add-a-post">Add a post</label>
+                <input type="text" name="name" class="" placeholder="Name">
+                <textarea name="message"  cols="30" rows="10" class="text" placeholder="Message"></textarea>
+                <button class="post-btn btn btn-secondary btn">Add message</button>
+            </div>
+        </form>
+        
+        <div id="text-body"></div>
+
+
+        <% if(messages.name !== "" || message.message !== ""){%>
+                <% for(let i =0; i<messages.length; i++) {%>
+                    <div class="name-text">
+                        <div id="time-stamp">
+                            <h2><%=messages[i].name%></h2>
+                        </div>
+                        <p><%=messages[i].message %></p>
+                        <a href="/feed/1/<%=messages[i]._id %>">See More...</a> 
+                        <p><%=Date().slice(0,21)%></p>
+                    </div>
+                    <%}%>
+                <%}%>
+        
+            
+    </div>
+</body>
+</html>

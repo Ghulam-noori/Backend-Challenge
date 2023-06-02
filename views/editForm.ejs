@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head')%>
+<body>
+    <div id="edit-page">
+        <form action="/feed/1/<%=messages._id %>" method="post">
+            <input type="text" name="name" class="name-input form-control" placeholder="Write your Name here" value="<%=messages.name%>">
+            <textarea name="message"  cols="30" rows="10" class="text form-control" placeholder="Write your message here"><%=messages.message%></textarea>
+            <div id="name-and-button">
+                <button class="post-btn btn btn-primary btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
